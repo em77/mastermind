@@ -14,3 +14,5 @@ means a codebreaker's peg is the correct color but in the wrong
 position. The order of the key pegs is meaningless. It is up to the
 codebreaker to find the meaning behind the key pegs and solve the
 code in as few turns as possible.
+
+To run the game, enter `ruby controller.rb` at your command-line.
