@@ -43,16 +43,17 @@ module Message
     line
     print "RULES".rjust(25)
     line
-    puts "The codemaker makes a code by choosing four colored pegs (out of "
+    puts "The codemaker makes a code by choosing four colored pegs (out of"
     puts "six possible colors) in their chosen order. The codebreaker has 10"
     puts "turns to attempt to guess the correct colors in the correct order."
-    puts "Each turn, the codebreaker is given feedback on their guess in the"
-    puts "form of black and white key pegs. A black peg means a codebreaker's"
-    puts "peg is the correct color and in the correct position. A white peg"
-    puts "means a codebreaker's peg is the correct color but in the wrong"
-    puts "position. The order of the key pegs is meaningless. It is up to the"
-    puts "codebreaker to find the meaning behind the key pegs and solve the"
-    puts "code in as few turns as possible."
+    puts "Colors can be used any number of times (e.g. green-green-green-green"
+    puts "is a possibility). Each turn, the codebreaker is given feedback on"
+    puts "their guess in the form of black and white key pegs. A black peg"
+    puts "means a codebreaker's peg is the correct color and in the correct"
+    puts "position. A white peg means a codebreaker's peg is the correct color"
+    puts "but in the wrong position. The order of the key pegs is meaningless."
+    puts "It is up to the codebreaker to find the meaning behind the key pegs"
+    puts "and solve the code in as few turns as possible."
     line
   end
 
