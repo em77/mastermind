@@ -4,7 +4,7 @@
 This is a command-line based Mastermind game written in Ruby where
 the player can either attempt to break a computer-generated code or
 create a code that the computer breaks. The AI implements Swaszek's
-algorithm[^cite] for code breaking in less than 5 turns on average.
+algorithm<sup>1</sup> for code breaking in less than 5 turns on average.
 
 ####RULES
 The codemaker makes a code by choosing four colored pegs (out of 
@@ -21,5 +21,5 @@ and solve the code in as few turns as possible.
 
 To run the game, enter `ruby controller.rb` at your command-line.
 
-[^cite]: P.F. Swaszek. The mastermind novice. *Journal of Recreational Mathematics*,
+<sup>1</sup> P.F. Swaszek. The mastermind novice. *Journal of Recreational Mathematics*,
 30(3):193–198, 2000.
