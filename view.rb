@@ -22,10 +22,14 @@ module Display
       end
     end
   end
+
+  def self.secret_code(secret_code)
+    print "Secret code: #{Display::peg_array_to_string(secret_code, 2)}\n\n"
+  end
 end
 
 module Prompt
-  def self.get_code_guess(choice_number, answer_choice_array)
+  def self.get_code(choice_number, answer_choice_array)
     print "\nAvailable colors: #{answer_choice_array.join(", ")}\n"
     print "Enter the peg color for position #{choice_number} (Left to right): "
     gets.chomp.downcase
@@ -33,6 +37,12 @@ module Prompt
 
   def self.play_again
     print "\nWould you like to play again? (yes/no): "
+    gets.chomp.downcase
+  end
+
+  def self.get_make_break_choice
+    print "\n\nWould you like to be the codemaker or codebreaker?\n"
+    print "Enter your choice (codemaker/codebreaker): "
     gets.chomp.downcase
   end
 end
@@ -61,15 +71,31 @@ module Message
     print "\n################################################\n"
   end
 
-  def self.you_won(code_array, number_of_turns)
-    print "\n\nYou cracked the code in #{number_of_turns} turns!"
-    puts " You are a Mastermind!"
-    print "Secret code: #{Display::peg_array_to_string(code_array, 2)}\n\n"
+  def self.do_next_computer_guess
+    print "\n\nPress enter to have the computer make its next guess...\n"
+    gets
   end
 
-  def self.you_lost(code_array)
-    puts "\n\nYou failed to crack the code in the allowed number of tries.\n\n"
-    print "Secret code: #{Display::peg_array_to_string(code_array, 2)}\n\n"
+  def self.computer_lost(secret_code)
+    print "\n\nYou somehow stumped the computer and won! Congrats!\n"
+    Display::secret_code(secret_code)
+  end
+
+  def self.computer_won(secret_code, turn_count)
+    print "\n\nThe computer cracked the code in #{turn_count} turns!\n"
+    Display::secret_code(secret_code)
+  end
+
+  def self.you_won(secret_code, turn_count)
+    print "\n\nYou cracked the code in #{turn_count} turns!"
+    puts " You are a Mastermind!"
+    Display::secret_code(secret_code)
+  end
+
+  def self.you_lost(secret_code)
+    puts "\n\nYou failed to crack the code in the allowed number of tries.\n"
+    Display::secret_code(secret_code)
+    puts
   end
 
   def self.exit

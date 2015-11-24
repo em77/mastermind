@@ -11,13 +11,16 @@ class Board
       "cyan" => 46}
   end
 
+  def code_peg_permutations
+    code_peg_colors.values.repeated_permutation(4).to_a
+  end
+
   def key_peg_colors
     # ANSI codes
     {"white" => 47, "black" => 40}
   end
 
-  def peg_placer(code_pegs, black_key_pegs, white_key_pegs)
-    key_pegs = black_key_pegs + white_key_pegs
+  def peg_placer(code_pegs, key_pegs)
     board_array << {code_pegs => key_pegs}
   end
 end
