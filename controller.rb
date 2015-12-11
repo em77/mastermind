@@ -79,7 +79,7 @@ class Game
     if turn_count == 0
       self.current_guess = codebreaker.first_guess
     else
-      get_user_input.do_next_computer_guess
+      Message::do_next_computer_guess
       codebreaker.perm_cleanser(current_guess, current_key_pegs)
       self.current_guess = codebreaker.next_guess
     end
@@ -140,10 +140,6 @@ class GetUserInput
       code_guess << code_peg_colors_hash[answer]
     end
     code_guess
-  end
-
-  def do_next_computer_guess
-    Message::do_next_computer_guess
   end
 
   def get_make_break_choice
